@@ -1,0 +1,30 @@
+<script lang="ts">
+  import ImageGrid from '$lib/components/ImageGrid.svelte';
+  import ContactForm from '$lib/components/ContactForm.svelte';
+</script>
+
+
+<div class="grow px-4 2xl:px-32 flex flex-col w-full items-center mt-8">
+  <div class="prose md:prose-xl max-w-prose flex flex-col items-center mb-8">
+    <h2 class="h2">Welcome</h2>
+
+    Hi, I'm Isha! I like to create **interactive curiosities**.
+    From interactive sculptures to puzzles and games, the goal is to make people think: "_hmm, I wonder what would
+    happen if I do this..._"
+    Consider this page as a portfolio of sorts.
+
+    If you are interested in commissioning me to make something awesome for you, feel free to <a href="#lets-chat">contact
+    me</a>!
+
+    <h2 class="h2">Projects</h2>
+
+    Here are some of silly and/or serious things I spend my time on.
+  </div>
+
+  <ImageGrid />
+
+  <div class="my-16">
+    <ContactForm />
+  </div>
+
+</div>
