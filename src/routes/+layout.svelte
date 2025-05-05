@@ -11,7 +11,9 @@
   <IshaNavbar />
 
   <div class="flex-1 p-4">
-    {@render children()}
+    <div class="grow px-4 2xl:px-32 flex flex-col w-full items-center mt-8">
+      {@render children()}
+    </div>
   </div>
 
   <IshaFooter />

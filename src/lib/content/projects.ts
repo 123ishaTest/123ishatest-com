@@ -26,14 +26,15 @@ export const projects: ProjectDetail[] = [
   },
   {
     title: 'Hand-crafted unique puzzles',
-    caption: 'High quality hand-crafted puzzles ' + '\nThis puzzle contains a hidden activity, can you find it?',
+    caption: 'High quality hand-crafted puzzles.' +
+      '\nThis puzzle contains a hidden activity, can you find it?',
     src: 'images/puzzle-ups-and-downs.png',
     href: '/projects/puzzles',
     linkLabel: 'Learn more',
   },
   {
     title: 'PokéClicker',
-    caption: 'A browser game which combines the gameplay of incremental games with the nostalgia of Pokémon',
+    caption: 'A browser game which combines the gameplay of incremental games with the nostalgia of Pokémon.',
     src: 'images/pokeclicker.png',
     href: 'https://www.pokeclicker.com/',
     linkLabel: 'Play!',
