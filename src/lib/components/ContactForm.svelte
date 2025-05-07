@@ -1,6 +1,4 @@
 <script lang="ts">
-  import { base } from '$app/paths';
-
   interface Props {
     title?: string;
     description?: string;
@@ -33,8 +31,6 @@
         </label>
 
         <button class="btn btn-lg" type="submit">Submit</button>
-
-        <input type="hidden" name="_next" value="{base}/submitted" />
       </div>
     </form>
   </div>
