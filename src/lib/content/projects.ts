@@ -5,15 +5,16 @@ export const projects: ProjectDetail[] = [
     title: 'PianOS',
     caption:
       "Ever felt upset while playing Super Mario because your controller didn't make enough noise?\n" +
-      '  No worries, with the <span class="italic">new-and-improved</span> <span class="font-bold">PianOS</span> you can now play your favourite games and produce classical music at the same time!',
-    src: 'images/piano.jpeg',
-    href: '/projects/pong-piano',
+      '  No worries, with the <i>new-and-improved</i> <b>PianOS</b> you can now play your favourite games and produce classical music at the same time!',
+    src: 'images/pianos/piano-build.jpeg',
+    href: '/projects/pianos',
+    linkLabel: 'Why?',
   },
   {
     title: 'BeatBox',
     caption:
-      "Whether you don't know the difference between D# and Eb or are secretly a master of Audacity,\n" +
-      '  the BeatBox will be a fun musical experience for all!',
+      "Whether you don't know the difference between D# and Eb or are secretly a master of Audacity, " +
+      'the BeatBox will be a fun musical experience for all!',
     src: 'images/beatbox.png',
     href: '',
   },
@@ -26,9 +27,11 @@ export const projects: ProjectDetail[] = [
   },
   {
     title: 'Hand-crafted unique puzzles',
-    caption: 'High quality hand-crafted puzzles.' +
-      '\nThis puzzle contains a hidden activity, can you find it?',
-    src: 'images/puzzle-ups-and-downs.png',
+    caption:
+      'I love making high quality hand-crafted puzzles. ' +
+      'Unique puzzles where the rules are not given, and finding out what you have to do is part of solving it.<br>' +
+      'I can make a personalized puzzle for any occasion!',
+    src: 'images/puzzles/puzzle-ups-and-downs.png',
     href: '/projects/puzzles',
     linkLabel: 'Learn more',
   },

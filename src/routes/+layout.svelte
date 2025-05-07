@@ -3,7 +3,6 @@
   import IshaNavbar from '$lib/components/IshaNavbar.svelte';
   import IshaFooter from '$lib/components/IshaFooter.svelte';
 
-
   let { children } = $props();
 </script>
 
@@ -11,7 +10,7 @@
   <IshaNavbar />
 
   <div class="flex-1 p-4">
-    <div class="grow px-4 2xl:px-32 flex flex-col w-full items-center mt-8">
+    <div class="mt-8 flex w-full grow flex-col items-center px-4 2xl:px-32">
       {@render children()}
     </div>
   </div>

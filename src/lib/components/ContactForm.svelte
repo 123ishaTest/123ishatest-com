@@ -1,21 +1,34 @@
 <script lang="ts">
   import { base } from '$app/paths';
+
+  interface Props {
+    title?: string;
+    description?: string;
+    emailLabel?: string;
+    messageLabel?: string;
+  }
+
+  let { title, description, emailLabel = 'Email Address', messageLabel = 'Message' }: Props = $props();
 </script>
 
-<div class="prose md:prose-2xl flex max-w-prose flex-col items-center">
-  <h2 class="h2" id="lets-chat">Let's chat!</h2>
+<div class="prose md:prose-xl flex max-w-prose flex-col items-center">
+  {#if title}
+    <h2 class="h2" id="lets-chat">{title}</h2>
+  {/if}
 
-  <p>Whether you have a commission or are just curious, feel free to reach out!</p>
+  {#if description}
+    <p class="font-bold">{description}</p>
+  {/if}
 
-  <div class="mt-8 w-full md:w-2/3">
+  <div class="w-full md:w-2/3">
     <form target="_blank" action="https://formsubmit.co/3f3d52736169abc21b057b98f7232139" method="POST">
       <div class="grid grid-cols-1 gap-6">
         <label class="block">
-          <span class="text-gray-700">What is your Email address?</span>
+          <span class="text-gray-700">{emailLabel}</span>
           <input name="email" type="email" class="mt-1 block w-full" required />
         </label>
         <label class="block">
-          <span class="text-gray-700">What would you like to talk about?</span>
+          <span class="text-gray-700">{messageLabel}</span>
           <textarea name="message" class="mt-1 block w-full" rows="6" required></textarea>
         </label>
 

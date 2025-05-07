@@ -1,5 +1,36 @@
 <script lang="ts">
+  import { base } from '$app/paths';
+  import ContactForm from '$lib/components/ContactForm.svelte';
 </script>
 
-## Handcrafted puzzles
-I like to make puzzles
+![Ups and downs]({base}/images/puzzles/puzzle-ups-and-downs.png)
+
+## Hand-crafted Unique puzzles
+
+While most people are content with doing the odd sudoku from their lawn chair once a year, puzzle ~~snobs~~ _enthusiasts_ require a more complex experience.
+
+Unique puzzles where the rules are not given, and finding out what you have to do is part of solving it.
+There is something hidden in the information you are given, and you start to notice little patterns that will eventually lead you to the answer.
+
+Even though there are no instructions given to you, there are still rules to make them fair and worth your time!
+
+- A puzzle must lead to a satisfying answer that the solver absolutely knows must be correct.
+- A puzzle must not contain unused information or unnecessary noise (e.g. _red herrings_).
+- When reading the answer to a puzzle, the solver should feel impressed with the way the answer was hidden, not frustrated.
+
+<p class="text-sm">(I can go into much, <i>much</i> more detail, but I'll spare you for now)</p>
+
+![Free Space]({base}/images/puzzles/puzzle-free-space.png)
+
+Designing puzzles for specific people or events is my passion.
+Imagining a topic, associate a puzzle with it, creating a trail of clues which the solver picks up on slowly, watching them light up as they gain an insight.
+puzzles are by far my favourite <span title="Yeah I said it, puzzles are an art form!"
+                                      class="text-primary">art form</span>!
+
+I can make a puzzle about any topic, for any event, and for any skill level!
+
+<ContactForm
+  description="Do you want a puzzle? Of course your do!"
+  emailLabel="Email Address"
+  messageLabel="Message"
+/>

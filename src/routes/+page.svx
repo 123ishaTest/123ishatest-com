@@ -4,25 +4,30 @@
 </script>
 
 
-  <div class="prose md:prose-xl max-w-prose flex flex-col items-center mb-8">
-    <h2 class="h2">Welcome</h2>
+<div class="prose md:prose-xl max-w-prose flex flex-col items-center mb-8">
+  <h2 class="h2">Welcome</h2>
 
-    Hi, I'm Isha! I like to create **interactive curiosities**.
-    From interactive sculptures to puzzles and games, the goal is to make people think: &ldquo;_hmm, I wonder what would
-    happen if I do this..._&rdquo;
-    Consider this page as a portfolio of sorts.
+  Hi, I'm Isha! I like to create **interactive curiosities**.
+  From interactive sculptures to puzzles and games, the goal is to make people think: &ldquo;_hmm, I wonder what would
+  happen if I do this..._&rdquo;
+  Consider this page as a portfolio of sorts.
 
-    If you are interested in commissioning me to make something awesome for you, feel free to <a href="#lets-chat">contact
-    me</a>!
+  If you are interested in commissioning me to make something awesome for you, feel free to <a href="#lets-chat">contact
+  me</a>!
 
-    <h2 class="h2">Projects</h2>
+  <h2 class="h2">Projects</h2>
 
-    Here are some of the silly and/or serious things I spend my time on.
-  </div>
+  Here are some of the silly and/or serious things I spend my time on.
+</div>
 
-  <ImageGrid />
+<ImageGrid />
 
-  <div class="my-16">
-    <ContactForm />
-  </div>
+<div class="my-16">
+  <ContactForm
+    title="Let's chat!"
+    description="Whether you have a commission or are just curious, feel free to reach out!"
+    emailLabel="What is your Email address?"
+    messageLabel="What would you like to talk about?"
+  />
+</div>
 

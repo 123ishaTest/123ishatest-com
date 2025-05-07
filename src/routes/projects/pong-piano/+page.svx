@@ -1,5 +1,0 @@
-<script lang="ts">
-</script>
-
-
-The pong piano was pretty cool
