@@ -16,7 +16,7 @@
 
 <div class="card card-border bg-base-100 shadow-sm">
   <figure>
-    <img src="{base}/{project.src}" alt={project.src} class="bg-accent-content" />
+    <img src="{base}/{project.src}" alt={project.src} class="bg-accent-content aspect-video" />
   </figure>
   <div class="card-body">
     <h2 class="card-title">{project.title}</h2>

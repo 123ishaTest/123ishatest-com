@@ -8,8 +8,10 @@
   <h2 class="h2">Welcome</h2>
 
   Hi, I'm Isha! I like to create <span class="text-primary">interactive curiosities</span>.
-  From interactive sculptures to puzzles and games, the goal is to make people think: &ldquo;_Hmm, I wonder what would
+  From interactive sculptures to puzzles and games, my goal is to make people think: &ldquo;_Hmm, I wonder what would
   happen if I do this..._&rdquo;
+
+  I am also working as a freelance software developer, in case you need anything.
   Consider this page as a portfolio of sorts.
 
   If you are interested in commissioning me to make something <span class="text-primary">awesome</span> for you, feel free to <a href="#lets-chat">contact
@@ -17,7 +19,7 @@
 
   <h2 class="h2">Projects</h2>
 
-  Here are some of the silly and/or serious things I spend my time on.
+  Here are some of the silly and/or serious things I spend my time on!
 </div>
 
 <ImageGrid />

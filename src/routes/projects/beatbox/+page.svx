@@ -1,0 +1,34 @@
+<script lang="ts">
+  import { base } from '$app/paths';
+  import ContactForm from '$lib/components/ContactForm.svelte';
+</script>
+
+
+## BeatBox
+
+A long time ago I got inspired by a musical thing I saw at a festival.
+It had tiles you could move on a grid to manipulate sounds.
+When I realised it changed the background music, it blew my mind so badly that I forgot about it for the next 8 years.
+
+Suddenly remembering, I decided to recreate it! In my mind it looked something like this
+![Beatbox model]({base}/images/beatbox/beatbox-model.jpg)
+
+A camera scans the tiles through the glass and plays musical samples on a loop.
+Users can place various tiles which sound good (or bad) together to create their own songs.
+
+The placement of the tile matters! One axis controls the volume, while the other does a pitch shift.
+
+![Beatbox progress]({base}/images/beatbox/beatbox-progress.png)
+
+If I ever get a decent microphone I will upload a video of it making sound, but for now these pictures will have to do!
+
+![Beatbox open]({base}/images/beatbox/beatbox-open.jpg)
+
+And of course no project is done until it has LED lighting...
+![Beatbox led]({base}/images/beatbox/beatbox-led.jpg)
+
+<ContactForm
+  description="Could you use a custom musical instrument? Contact me and let's see what we can create!"
+  emailLabel="Email Address"
+  messageLabel="Message"
+/>

@@ -15,8 +15,9 @@ export const projects: ProjectDetail[] = [
     caption:
       "Whether you don't know the difference between D# and Eb or are secretly a master of Audacity, " +
       'the BeatBox will be a fun musical experience for all!',
-    src: 'images/beatbox.png',
-    href: '',
+    src: 'images/beatbox/beatbox-open.jpg',
+    href: '/projects/beatbox',
+    linkLabel: 'Show me!',
   },
   {
     title: 'Foolsball',
@@ -58,11 +59,20 @@ export const projects: ProjectDetail[] = [
     href: 'https://123ishatest.itch.io/the-road-not-taken',
     linkLabel: 'Play!',
   },
+
+  {
+    title: 'Sports Association Member Administration',
+    caption: 'A member administration, CMS, and community hub managing thousands of members!',
+    src: 'images/admin-backend.png',
+    href: 'https://punch.tudelft.nl/',
+    linkLabel: 'Admire!',
+  },
+
   {
     title: 'Punch Go',
-    caption: '',
+    caption:
+      'A real-word multiplayer game made for a one-time event where you can catch your friends on the streets of Delft!',
     src: 'images/punch-go.png',
-    // href: '',
   },
   // {
   //   title: '',
