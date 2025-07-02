@@ -7,12 +7,12 @@
 <div class="prose md:prose-xl max-w-prose flex flex-col items-center mb-8">
   <h2 class="h2">Welcome</h2>
 
-  Hi, I'm Isha! I like to create **interactive curiosities**.
-  From interactive sculptures to puzzles and games, the goal is to make people think: &ldquo;_hmm, I wonder what would
+  Hi, I'm Isha! I like to create <span class="text-primary">interactive curiosities</span>.
+  From interactive sculptures to puzzles and games, the goal is to make people think: &ldquo;_Hmm, I wonder what would
   happen if I do this..._&rdquo;
   Consider this page as a portfolio of sorts.
 
-  If you are interested in commissioning me to make something awesome for you, feel free to <a href="#lets-chat">contact
+  If you are interested in commissioning me to make something <span class="text-primary">awesome</span> for you, feel free to <a href="#lets-chat">contact
   me</a>!
 
   <h2 class="h2">Projects</h2>
