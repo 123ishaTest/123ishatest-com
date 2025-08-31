@@ -2,7 +2,7 @@
   import { resolve } from '$app/paths';
 </script>
 
-<div class="card bg-primary-content pointer-events-none w-96 text-black shadow-xl">
+<div class="card bg-primary-content pointer-events-none text-black shadow-xl md:w-96">
   <div class="card-body">
     <div class="flex justify-between">
       <h2 class="text-xl font-bold">Professional Software Developer</h2>

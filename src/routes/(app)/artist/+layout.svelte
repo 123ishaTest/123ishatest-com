@@ -8,7 +8,10 @@
 <div class="flex h-screen flex-col">
   <IshaNavbar />
 
-  {@render children()}
+  <div class="items-center- mt-8 flex w-full grow flex-col">
+    {@render children()}
+  </div>
+
   <IshaFooter />
 </div>
 

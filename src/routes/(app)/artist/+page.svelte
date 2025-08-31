@@ -5,7 +5,7 @@
 </script>
 
 <div class="flex flex-col items-center">
-  <div class="prose md:prose-xl my-8 flex max-w-prose flex-col items-center">
+  <div class="prose md:prose-xl my-8 flex max-w-prose flex-col items-center p-4">
     <h2 class="h2">Welcome</h2>
 
     <p>

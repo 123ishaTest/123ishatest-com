@@ -27,7 +27,8 @@
       <div class="flex flex-col">
         <span class="text-5xl font-bold text-white drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)]">{project.title}</span>
         <!-- eslint-disable svelte/no-at-html-tags -->
-        <span class="w-96 text-2xl text-white drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)]">{@html project.caption}</span
+        <span class="hidden w-96 text-2xl text-white drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)] md:block"
+          >{@html project.caption}</span
         >
       </div>
     </div>

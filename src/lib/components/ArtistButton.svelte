@@ -1,11 +1,10 @@
 <script lang="ts">
-  import { onMount, onDestroy } from 'svelte';
+  import { onDestroy, onMount } from 'svelte';
   import { resolve } from '$app/paths';
 
   let {
     text = 'CREATIVE\nINTERACTIVE\nARTIST',
-    particleColor = '#60a5fa',
-    background = 'transparent',
+    particleColor = '#6afa60',
     density = 2,
     mouseRadius = 90,
     repulsion = 1000,
@@ -165,12 +164,8 @@
     }
 
     ctx.save();
-    if (background !== 'transparent') {
-      ctx.fillStyle = background;
-      ctx.fillRect(0, 0, width, height);
-    } else {
-      ctx.clearRect(0, 0, width, height);
-    }
+
+    ctx.clearRect(0, 0, width, height);
     ctx.fillStyle = particleColor;
     ctx.beginPath();
     for (let p of particles) {
@@ -187,9 +182,11 @@
     mouseX = e.clientX - rect.left;
     mouseY = e.clientY - rect.top;
   }
+
   function onEnter() {
     hovering = true;
   }
+
   function onLeave() {
     hovering = false;
   }
@@ -221,9 +218,3 @@
     ></canvas>
   </div>
 </a>
-
-<style>
-  canvas {
-    image-rendering: optimizeQuality;
-  }
-</style>

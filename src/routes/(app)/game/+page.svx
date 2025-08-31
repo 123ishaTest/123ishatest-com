@@ -51,7 +51,7 @@
     description="Whether you want to commission me or just talk about games, all inquiries are welcome!"
     emailLabel="What is your Email address?"
     messageLabel="What would you like to talk about?"
-    style="game"
+    variation="game"
     />
 
 </GamePanel>

@@ -6,7 +6,7 @@
     description?: string;
     emailLabel?: string;
     messageLabel?: string;
-    style?: 'modern' | 'game';
+    variation?: 'modern' | 'game';
   }
 
   let {
@@ -14,7 +14,7 @@
     description,
     emailLabel = 'Email Address',
     messageLabel = 'Message',
-    style = 'modern',
+    variation = 'modern',
   }: Props = $props();
 </script>
 
@@ -39,10 +39,10 @@
           <textarea name="message" class="mt-1 block w-full" rows="6" required></textarea>
         </label>
 
-        {#if style === 'modern'}
+        {#if variation === 'modern'}
           <button class="btn btn-lg btn-primary" type="submit">Submit</button>
         {/if}
-        {#if style === 'game'}
+        {#if variation === 'game'}
           <MedievalButton>Submit</MedievalButton>
         {/if}
       </div>

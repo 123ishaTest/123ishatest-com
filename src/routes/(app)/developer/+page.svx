@@ -8,7 +8,7 @@
 <div class="prose md:prose-xl max-w-prose flex flex-col items-center mb-8">
   <h2 class="h2">Welcome</h2>
 
-  Hi, I'm Isha! I am a full-stack developer with over 10 years of experience.
+  Hi, I'm Isha! I am a full-stack developer with over 5 years of experience.
   I'm currently working as a freelancer, building anything from full-stack database administration tools to open-source game engines and from robotics to mobile applications .
 
   After working for various companies, I grew frustrated with the pace they* operate with.
