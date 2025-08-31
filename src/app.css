@@ -8,3 +8,24 @@
     dark,
     garden;
 }
+
+@font-face {
+  font-family: 'beachday';
+  src: url('/fonts/beachday.ttf');
+}
+
+@font-face {
+  font-family: 'brandon';
+  src: url('/fonts/brandon.otf');
+}
+
+.pixelated {
+  image-rendering: -moz-crisp-edges;
+  image-rendering: pixelated;
+  -ms-interpolation-mode: nearest-neighbor;
+}
+
+.non-pixelated {
+  image-rendering: auto;
+  -ms-interpolation-mode: initial;
+}

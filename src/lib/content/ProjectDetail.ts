@@ -4,4 +4,5 @@ export interface ProjectDetail {
   src: string;
   href?: string;
   linkLabel?: string;
+  imgStyle?: string;
 }
