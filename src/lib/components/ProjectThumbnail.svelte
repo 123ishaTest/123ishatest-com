@@ -11,12 +11,16 @@
   let isLinkInternal: boolean = $derived(project?.href?.startsWith('/') ?? false);
   let link: string | undefined = $derived(isLinkInternal ? base + project.href : project.href);
   let hrefTarget: string = $derived(isLinkInternal ? '_self' : '_blank');
-  let linkStyling: string = $derived(isLinkInternal ? 'btn-primary' : 'btn-accent');
+  let linkStyling: string = $derived(isLinkInternal ? 'btn-primary' : 'btn-primary');
 </script>
 
 <div class="card card-border bg-base-100 shadow-sm">
   <figure>
-    <img src="{base}/{project.src}" alt={project.src} class="bg-accent-content aspect-video" />
+    <img
+      src="{base}/{project.src}"
+      alt={project.src}
+      class="bg-accent-content aspect-video w-full {project.imgStyle ?? ''}"
+    />
   </figure>
   <div class="card-body">
     <h2 class="card-title">{project.title}</h2>

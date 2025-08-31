@@ -1,7 +1,9 @@
 <script lang="ts">
-  import { base } from '$app/paths';
+  import { base, resolve } from '$app/paths';
   import ContactForm from '$lib/components/ContactForm.svelte';
 </script>
+
+<a class="link" href={resolve('/game')}>⇽ Back</a>
 
 ![Ups and downs]({base}/images/puzzles/puzzle-ups-and-downs.png)
 

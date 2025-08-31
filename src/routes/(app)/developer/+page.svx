@@ -1,0 +1,42 @@
+<script lang="ts">
+  import DeveloperProjects from '$lib/components/DeveloperProjects.svelte';
+  import ContactForm from '$lib/components/ContactForm.svelte';
+  import DeveloperSkills from '$lib/components/DeveloperSkills.svelte';
+</script>
+
+
+<div class="prose md:prose-xl max-w-prose flex flex-col items-center mb-8">
+  <h2 class="h2">Welcome</h2>
+
+  Hi, I'm Isha! I am a full-stack developer with over 10 years of experience.
+  I'm currently working as a freelancer, building anything from full-stack database administration tools to open-source game engines and from robotics to mobile applications .
+
+  After working for various companies, I grew frustrated with the pace they* operate with.
+  Time is wasted by countless meetings, unreliable communication and pointless hierarchies.
+  Shortcuts are taken and code quality is often not valued enough, leading to slowdowns years down the road.
+
+  Having learned what to avoid, I focus on delivering high-quality software built on modern practices that will stand the test of time.
+
+  <DeveloperSkills/>
+
+  You will find in me an enthusiastic developer who gets their joy from seeing people interact with the systems they've built.
+  Eager to deliver, I cannot wait to hear what we'll be building together!
+
+  If want to hire me for your project <a href="#lets-chat">contact me</a> below!
+
+  <span class="text-xs italic text-gray-300 mt-4">*Except your company, of course</span>
+  <h2 class="h2">Delivered Projects</h2>
+
+</div>
+
+<DeveloperProjects />
+
+<div class="my-16">
+  <ContactForm
+    title="Hire me!"
+    description="Feel free to contact me about a business opportunity."
+    emailLabel="What is your Email address?"
+    messageLabel="What would you like to talk about?"
+  />
+</div>
+

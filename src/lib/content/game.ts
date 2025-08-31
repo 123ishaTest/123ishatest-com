@@ -1,31 +1,6 @@
 import type { ProjectDetail } from '$lib/content/ProjectDetail';
 
-export const projects: ProjectDetail[] = [
-  {
-    title: 'PianOS',
-    caption:
-      "Ever felt upset while playing Super Mario because your controller didn't make enough noise?\n" +
-      '  No worries, with the <i>new-and-improved</i> <b>PianOS</b> you can now play your favourite games and produce classical music at the same time!',
-    src: 'images/pianos/piano-build.jpeg',
-    href: '/projects/pianos',
-    linkLabel: 'Why?',
-  },
-  {
-    title: 'BeatBox',
-    caption:
-      "Whether you don't know the difference between D# and Eb or are secretly a master of Audacity, " +
-      'the BeatBox will be a fun musical experience for all!',
-    src: 'images/beatbox/beatbox-open.jpg',
-    href: '/projects/beatbox',
-    linkLabel: 'Show me!',
-  },
-  {
-    title: 'Foolsball',
-    caption:
-      'Do you always lose at foosball? No more!\n' + '  This automated goalkeeper is so bad that even you can beat it!',
-    src: 'images/foosball.png',
-    href: '',
-  },
+export const gameProjects: ProjectDetail[] = [
   {
     title: 'Hand-crafted unique puzzles',
     caption:
@@ -37,7 +12,7 @@ export const projects: ProjectDetail[] = [
     linkLabel: 'Learn more',
   },
   {
-    title: 'PokéClicker',
+    title: 'PokeClicker',
     caption: 'A browser game which combines the gameplay of incremental games with the nostalgia of Pokémon.',
     src: 'images/pokeclicker.png',
     href: 'https://www.pokeclicker.com/',
@@ -61,11 +36,11 @@ export const projects: ProjectDetail[] = [
   },
 
   {
-    title: 'Sports Association Member Administration',
-    caption: 'A member administration, CMS, and community hub managing thousands of members!',
-    src: 'images/admin-backend.png',
-    href: 'https://punch.tudelft.nl/',
-    linkLabel: 'Admire!',
+    title: 'GameHop',
+    caption: 'An attention-dividing incremental with an ever-shrinking budget!',
+    src: 'images/gamehop.png',
+    href: 'https://ishadijcks.github.io/incremental-games-2020-jam/',
+    linkLabel: 'Play!',
   },
 
   {
@@ -74,19 +49,19 @@ export const projects: ProjectDetail[] = [
       'A real-word multiplayer game made for a one-time event where you can catch your friends on the streets of Delft!',
     src: 'images/punch-go.png',
   },
-  // {
-  //   title: '',
-  //   caption: '',
-  //   src: '',
-  //   href: '',
-  // },
-  // {
-  //   title: '',
-  //   caption: '',
-  //   src: '',
-  //   href: '',
-  // },
+  {
+    title: 'Stable Jewels',
+    caption: 'An incremental game made in a single day',
+    src: 'images/stable-jewels.png',
+    href: 'https://123ishatest.github.io/stable-jewels',
+    linkLabel: 'Play!',
+  },
 
-  // TODO(@Isha): Generate puzzles
-  // TODO(@Isha): Punch Go
+  {
+    title: 'TimeHop',
+    caption: 'A backwards incremental game made for Ludum Dare',
+    src: 'images/timehop.png',
+    href: 'https://ldjam.com/events/ludum-dare/47/timehop',
+    linkLabel: 'Play!',
+  },
 ];

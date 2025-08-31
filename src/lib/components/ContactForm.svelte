@@ -1,12 +1,21 @@
 <script lang="ts">
+  import MedievalButton from '$lib/components/MedievalButton.svelte';
+
   interface Props {
     title?: string;
     description?: string;
     emailLabel?: string;
     messageLabel?: string;
+    style?: 'modern' | 'game';
   }
 
-  let { title, description, emailLabel = 'Email Address', messageLabel = 'Message' }: Props = $props();
+  let {
+    title,
+    description,
+    emailLabel = 'Email Address',
+    messageLabel = 'Message',
+    style = 'modern',
+  }: Props = $props();
 </script>
 
 <div class="prose md:prose-xl flex max-w-prose flex-col items-center">
@@ -30,7 +39,12 @@
           <textarea name="message" class="mt-1 block w-full" rows="6" required></textarea>
         </label>
 
-        <button class="btn btn-lg" type="submit">Submit</button>
+        {#if style === 'modern'}
+          <button class="btn btn-lg btn-primary" type="submit">Submit</button>
+        {/if}
+        {#if style === 'game'}
+          <MedievalButton>Submit</MedievalButton>
+        {/if}
       </div>
     </form>
   </div>

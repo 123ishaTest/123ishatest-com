@@ -1,0 +1,57 @@
+<script lang="ts">
+  import { resolve } from '$app/paths';
+  import GameProjects from '$lib/components/GameProjects.svelte';
+  import ContactForm from '$lib/components/ContactForm.svelte';
+  import GamePanel from '$lib/components/GamePanel.svelte';
+
+  let link = resolve('/projects/puzzles');
+</script>
+
+
+<GamePanel>
+<div class="prose md:prose-xl max-w-prose flex flex-col items-center mb-8">
+  <h2 class="h2">Welcome</h2>
+
+  Hi, my name Isha!
+  I have been creating puzzles and games for over 10 years now.
+
+  Incremental games are my specialty.
+  There is something so satisfying about reducing a game to its core mechanics.
+  If a game is not fun an incremental game, there is a large chance it is not that fun as a full-fledged game either.
+  Over the years I have compiled all my code into a single game engine: <a href="https://ludiek.123ishatest.com" target="_blank" style="color: oklch(62% 0.194 149.214)">Ludiek</a>.
+
+  I also work as a freelance game designer and developer.
+  You can hire me to design your game and I guarantee it will end up more fun than it was before!
+
+  Another big passion of mine is <a href={link}>Puzzles</a>.
+  Hiding information in obscure ways and watching people figure it out is an amazing experience.
+  I can make puzzles for any event or topic at any difficulty level!
+
+  If want to hire me for your game, or commission a hand-crafted puzzle, <a href="#lets-chat">contact me</a> below!
+</div>
+</GamePanel>
+
+<br>
+<GamePanel>
+<div class="flex flex-col items-center">
+<div class="prose md:prose-xl flex flex-col items-center mb-8">
+
+  <h2 class="h2">Puzzles and Games</h2>
+</div>
+</div>
+<GameProjects />
+
+</GamePanel>
+
+
+<br>
+<GamePanel>
+    <ContactForm
+    title="Contact me!"
+    description="Whether you want to commission me or just talk about games, all inquiries are welcome!"
+    emailLabel="What is your Email address?"
+    messageLabel="What would you like to talk about?"
+    style="game"
+    />
+
+</GamePanel>

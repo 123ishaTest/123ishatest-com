@@ -1,8 +1,9 @@
 <script lang="ts">
-  import { base } from '$app/paths';
+  import { base, resolve } from '$app/paths';
   import ContactForm from '$lib/components/ContactForm.svelte';
 </script>
 
+<a class="link" href={resolve('/artist')}>⇽ Back</a>
 
 ## PianOS
 
@@ -15,9 +16,12 @@ It's all about finding the perfect balance between _not too useful_ and _not too
 
 
 I've always wanted to design my own game console, and creating it out of something as ridiculous as a piano seemed the perfect amount of silly.
-We created a _Simon Says_ game as well as a _maze escape_ that two people could play competitively.
+We wired buttons under the keys which send input to a game emulator.
+
 
 ![Piano Open]({base}/images/pianos/piano-open.png)
+
+
 
 A bit of technology alongside beautiful woodworking means people can play Super Mario on a piano now!
 
@@ -26,6 +30,8 @@ Of course not, that would be too useful!
 
 #### Does it still make sound when you play it?
 Of course, otherwise it would be too useless!
+
+We did create a _Simon Says_ type game that two people could play competitively.
 
 ![Piano Game]({base}/images/pianos/piano-simon.png)
 
