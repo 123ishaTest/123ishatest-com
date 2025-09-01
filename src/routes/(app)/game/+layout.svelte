@@ -4,7 +4,7 @@
   let { children } = $props();
 </script>
 
-<div class="custom-cursor background flex flex-col">
+<div class="custom-cursor background pixelated flex flex-col">
   <IshaNavbar />
 
   <div class="mt-8 flex w-full grow flex-col items-center px-4 2xl:px-32">
@@ -15,6 +15,8 @@
 <style>
   .background {
     background-image: url('/sky-background.png');
+    background-attachment: fixed;
+    background-size: 100% 100%;
   }
 
   .custom-cursor {
