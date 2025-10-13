@@ -8,7 +8,7 @@
   <div class="title flex flex-col items-center space-y-4 overflow-hidden p-4 lg:hidden">
     <div class="flex flex-col items-center">
       <span class="text-2xl font-bold text-white">Hi, I'm Isha!</span>
-      <span class="text-2xl font-bold text-white">Select the skills your are looking for</span>
+      <span class="text-2xl font-bold text-white">Select the role you are looking for</span>
     </div>
     <DeveloperButton />
     <ArtistButton />
@@ -20,7 +20,7 @@
       <div class="absolute top-1/2 left-1/2 z-10 flex -translate-x-1/2 -translate-y-1/2 transform">
         <div class="flex flex-col items-center">
           <span class="text-3xl font-bold text-white">Hi, I'm Isha!</span>
-          <span class="text-3xl font-bold text-white">Select the skills your are looking for</span>
+          <span class="text-3xl font-bold text-white">Select the role you are looking for</span>
         </div>
       </div>
 
