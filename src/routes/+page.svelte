@@ -6,7 +6,10 @@
 
 <div id="background">
   <div class="title flex flex-col items-center space-y-4 overflow-hidden p-4 lg:hidden">
-    <h2 class="mt-12 text-2xl font-bold">I am looking for a...</h2>
+    <div class="flex flex-col items-center">
+      <span class="text-2xl font-bold text-white">Hi, I'm Isha!</span>
+      <span class="text-2xl font-bold text-white">Select the skills your are looking for</span>
+    </div>
     <DeveloperButton />
     <ArtistButton />
     <GameButton />
@@ -15,7 +18,10 @@
   <div class="hidden min-h-screen flex-col items-center justify-center lg:flex">
     <div class="relative h-full w-full">
       <div class="absolute top-1/2 left-1/2 z-10 flex -translate-x-1/2 -translate-y-1/2 transform">
-        <span class="text-3xl font-bold text-white">I am looking for a...</span>
+        <div class="flex flex-col items-center">
+          <span class="text-3xl font-bold text-white">Hi, I'm Isha!</span>
+          <span class="text-3xl font-bold text-white">Select the skills your are looking for</span>
+        </div>
       </div>
 
       <div
