@@ -11,11 +11,7 @@
   Hi, I'm Isha! I am a full-stack developer with over 5 years of experience.
   I'm currently working as a freelancer, building anything from full-stack database administration tools to open-source game engines and from robotics to mobile applications .
 
-  After working for various companies, I grew frustrated with the pace they* operate with.
-  Time is wasted by countless meetings, unreliable communication and pointless hierarchies.
-  Shortcuts are taken and code quality is often not valued enough, leading to slowdowns years down the road.
-
-  Having learned what to avoid, I focus on delivering high-quality software built on modern practices that will stand the test of time.
+  I focus on delivering high-quality software built on modern practices that will stand the test of time.
 
   <DeveloperSkills/>
 
