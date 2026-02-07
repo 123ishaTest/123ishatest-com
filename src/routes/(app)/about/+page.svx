@@ -1,0 +1,42 @@
+<script>
+</script>
+
+Hi, I am Isha!
+
+I was born and raised in The Hague, The Netherlands.
+
+From a young age I have been making all kinds of puzzles and games.
+I had made my own (terrible) version of Dungeons & Dragons that my classmate described as "_not as fun as the new Mario Kart I got for my birthday_".
+This first review did not deter me however, it motivated me to improve my creative skills.
+
+In high school, I got interested in programming as it was an approachable way to create things and share them with the world.
+In a naive teenage and desparate move, I decided to study Computer Science because it "would teach me about computers or something and that's pretty interesting".
+
+Boy was I wrong. Turns out Computer Science is all about math and logic.
+It has very little to do with actual computers.
+But I like learning, and it didn't take long before I fell in love with [Algorithmics](https://www.tudelft.nl/ewi/over-de-faculteit/afdelingen/software-technology/algorithmics): The fundamental study of abstract problems.
+How we can study the concept of problems and rate them by difficulty ([some problems](https://en.wikipedia.org/wiki/Halting_problem) are even impossible!). Very interesting stuff!
+I convinced them to let me do [my thesis](https://repository.tudelft.nl/record/uuid:10f199d0-eec1-4431-ab25-c37311ac48b3) on logic puzzles, where I applied concepts from Sudoku on the lesser studied word puzzles like Crosswords.
+
+Equipped with my degrees, I started out my career as a general "software developer", a title that always caused me some discomfort.
+It matters _what_ ideas we develop! The fact that it is realized with software is circumstantial.
+After a brief dabble in the world of Cyber Security (a field whose theory had [fascinated me](https://en.wikipedia.org/wiki/The_Code_Book)), I realised that computers themselves aren't all that interesting, but you can sure do interesting things with them!
+
+Generally speaking, commercial projects have little room for creativity as they are optimized to generate revenue, something I have a hard time pretending to find interesting.
+During my years working, I had to route that creativity somewhere, leading to me making multiple video games and even the abstract version of that, a [game engine](https://ludiek.123ishatest.com/).
+I love making projects directly for the people that end up using them. Watching them light up as they enjoy it will always mean more to me any "upticks in clickthrough rates".
+
+So I decided it was time to explore a new path, and quit my job to become a full-time freelance "software developer/game designer/interactive artist".
+
+I wouldn't dare claim _that_ is a comfortable title, but I am incredibly happy I can now spend my days creating _Interactive Curiousities_.
+
+If anything on this site is of interest, or you just want to talk, feel free to contact me!
+
+Isha
+
+<div class="flex flex-row justify-center">
+
+	<a class="mt-2 p-4 cursor-action border-2 no-underline
+" href="mailto:info@123ishatest.com">Send me an email!</a>
+</div>
+

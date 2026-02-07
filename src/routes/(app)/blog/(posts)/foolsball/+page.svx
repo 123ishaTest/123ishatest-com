@@ -1,0 +1,9 @@
+<script lang="ts">
+  import { base, resolve } from '$app/paths';
+
+</script>
+
+
+## Foolsball
+
+Automated foosball robot.

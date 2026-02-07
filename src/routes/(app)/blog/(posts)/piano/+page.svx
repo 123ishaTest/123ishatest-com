@@ -1,0 +1,39 @@
+<script lang="ts">
+	import { base, resolve } from '$app/paths';
+</script>
+
+## PianOS
+
+When I worked at [Q42](https://www.q42.nl/) there was a yearly hackathon called the w00tcamp.
+While hackathons normally focus on solving complex real-world problems overnight, the w00tcamp takes a much better approach.
+Teams are encouraged to create something silly!
+It's all about finding the perfect balance between _not too useful_ and _not too useless_.
+
+![Piano Build]({base}/images/pianos/piano-build.jpeg)
+
+
+I've always wanted to design my own game console, and creating it out of something as ridiculous as a piano seemed the perfect amount of silly.
+We wired buttons under the keys which send input to a game emulator.
+
+
+![Piano Open]({base}/images/pianos/piano-open.png)
+
+
+
+A bit of technology alongside beautiful woodworking means people can play Super Mario on a piano now!
+
+#### Does it have games to help you study the piano?
+Of course not, that would be too useful!
+
+#### Does it still make sound when you play it?
+Of course, otherwise it would be too useless!
+
+We did create a _Simon Says_ type game that two people could play competitively.
+
+![Piano Game]({base}/images/pianos/piano-simon.png)
+
+The piano stands tall at the Q42 office, making guests do a double take: _"Wait, why does that piano have a screen?"_
+
+Update:
+
+As of late 2025, Q42 has moved their office. The piano now stands tall at my house, at least it will until I find another destination for it :)
