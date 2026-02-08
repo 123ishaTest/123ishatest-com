@@ -16,7 +16,7 @@ export const projects: Project[] = [
     title: 'Lands Unknown',
     description: 'Lands Unknown is a fantasy ludiverse spanning across various games',
     date: '2026-present',
-    image: '',
+    image: asset('/images/lands-unknown.png'),
     url: 'https://lands-unknown.com',
   },
   {
@@ -24,22 +24,26 @@ export const projects: Project[] = [
     title: 'The Road Not Taken',
     description: 'An exploration incremental game created for the Big Mode Game Jam 2025',
     date: '2025',
-    image: '',
+    image: asset('/images/road-not-taken.png'),
     url: 'https://123ishatest.itch.io/the-road-not-taken',
   },
   {
     ...foolsball,
     url: resolve(foolsball.path),
+    image: asset('/images/foosball.png'),
     date: '2024',
   },
   {
     ...beatBox,
     url: resolve(beatBox.path),
+    image: asset('/images/beatbox/beatbox-led.jpg'),
     date: '2024',
   },
   {
     ...piano,
     url: resolve(piano.path),
+    // TODO(@Isha): Change to mario photo
+    image: asset('/images/pianos/piano-open.png'),
     date: '2023',
   },
   {
@@ -47,7 +51,7 @@ export const projects: Project[] = [
     title: 'Incremental Game Template!',
     description: 'A collection of useful scripts to help you develop incremental games',
     date: '2022',
-    image: '',
+    image: asset('/images/incremental-game-template.png'),
     url: 'https://123ishatest.github.io/igt-docs',
   },
   {
@@ -55,7 +59,7 @@ export const projects: Project[] = [
     title: 'Stable Jewels',
     description: 'A silly incremental game prototype that turned out quite fun!',
     date: '2021',
-    image: '',
+    image: asset('/images/stable-jewels.png'),
     url: 'https://123ishatest.github.io/stable-jewels',
   },
   {
@@ -63,7 +67,7 @@ export const projects: Project[] = [
     title: 'Card Quest',
     description: 'A Deck-building incremental game created for the r/incremental_games 2021 jam!',
     date: '2021',
-    image: '',
+    image: asset('/images/card-quest.png'),
     url: 'https://ishad.itch.io/card-quest',
   },
   {
@@ -71,7 +75,7 @@ export const projects: Project[] = [
     title: 'Gamehop',
     description: 'An attention divider incremental made for 2020 r/incremental_games jam!',
     date: '2020',
-    image: '',
+    image: asset('/images/gamehop.png'),
     url: 'https://ishadijcks.github.io/incremental-games-2020-jam',
   },
   {
@@ -79,7 +83,7 @@ export const projects: Project[] = [
     title: 'Timehop',
     description: 'A time travel incremental made for Ludum Dare 47',
     date: '2020',
-    image: '',
+    image: asset('/images/timehop.png'),
     url: 'https://ldjam.com/events/ludum-dare/47/timehop',
   },
   {
@@ -87,7 +91,7 @@ export const projects: Project[] = [
     title: 'Project March',
     description: 'Building robotic legs so that paraplegic patients can walk again',
     date: '2019',
-    image: '',
+    image: asset('/images/project-march.png'),
     url: 'https://www.projectmarch.nl/',
   },
   {
@@ -95,7 +99,7 @@ export const projects: Project[] = [
     title: 'PokéClicker',
     description: 'A pokemon-inspired incremental game where you become the very best (like no one ever was)',
     date: '2015',
-    image: '',
+    image: asset('/images/pokeclicker.png'),
     url: 'https://pokeclicker.com',
   },
 ];
