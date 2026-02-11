@@ -11,7 +11,7 @@
   <div class="mb-4">
     <Title>Click on a project to learn more!</Title>
   </div>
-  <div class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4">
+  <div class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
     {#each projects as project (project.id)}
       <ProjectThumbnail {project} />
     {/each}

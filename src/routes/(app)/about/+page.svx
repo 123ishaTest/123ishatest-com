@@ -28,15 +28,9 @@ I love making projects directly for the people that end up using them. Watching 
 
 So I decided it was time to explore a new path, and quit my job to become a full-time freelance "software developer/game designer/interactive artist".
 
-I wouldn't dare claim _that_ is a comfortable title, but I am incredibly happy I can now spend my days creating _Interactive Curiousities_.
+I wouldn't dare claim _that_ is a comfortable title, but I am incredibly happy I can now spend my days _Creating Interactive Curiousities_.
 
-If anything on this site is of interest, or you just want to talk, feel free to contact me!
+If anything on this site is of interest, or you just want to talk, feel free to contact me by sending an email to <a href="mailto:info@123ishatest.com">info@123ishatest.com</a>
 
 Isha
-
-<div class="flex flex-row justify-center">
-
-	<a class="mt-2 p-4 cursor-action border-2 no-underline
-" href="mailto:info@123ishatest.com">Send me an email!</a>
-</div>
 

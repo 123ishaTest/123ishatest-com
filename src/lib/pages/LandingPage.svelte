@@ -18,7 +18,7 @@
         </Intro>
       </div>
 
-      <Link href="/work">
+      <Link href="/(app)/contact">
         <Card title="Software Developer">
           I work as a freelance software developer on a wide range of projects from full-stack web development to
           robotics. My specialty is the role of the <span class="italic">Toolsmith</span>: building tools to empower
@@ -26,7 +26,7 @@
         </Card>
       </Link>
 
-      <Link href="/blog">
+      <Link href="/(app)/blog">
         <Card title="Blog">
           Here I write about game design, software (over)engineering, puzzle hunts, worldbuilding, glue guns or whatever
           else has gotten me distracted this month!
@@ -34,7 +34,7 @@
       </Link>
 
       <!-- TODO: Add link to filter-->
-      <Link href="/blog">
+      <Link href="/(app)/projects">
         <Card title="Game Development">
           My custom game engine <a class="link" target="_blank" href="https://ludiek.123ishatest.com">Ludiek</a> is
           currently under heavy development. Soon I will release the first game in my upcoming ludiverse:
@@ -43,20 +43,23 @@
       </Link>
 
       <!-- TODO: Add link to filter-->
-      <Link href="/blog">
+      <Link href="/(app)/projects">
         <Card title="Puzzles">
           Designing puzzles for specific people or events is my passion. Creating a trail of clues which can be
           carefully unraveled is so fun and challenging and makes puzzles my favourite art form!
         </Card>
       </Link>
 
-      <Card title="Interactive Art">
-        In the free time that I have left, I create interactive art installations. The goal is to make people think: <span
-          class="italic">“Hmm, I wonder what would happen if I do this...”</span
-        >. I combine technology with artistic vision to create interactive curiosities that you'll remember!
-      </Card>
+      <!-- TODO: Add link to filter-->
+      <Link href="/(app)/projects">
+        <Card title="Interactive Art">
+          In the free time that I have left, I create interactive art installations. The goal is to make people think: <span
+            class="italic">“Hmm, I wonder what would happen if I do this...”</span
+          >. I combine technology with artistic vision to create interactive curiosities that you'll remember!
+        </Card>
+      </Link>
 
-      <Link href="/work">
+      <Link href="/(app)/contact">
         <Card title="Contact">
           If you want to hire me as a software developer, complain that my puzzles are too hard or simply talk about
           anything here that piqued your interest, don't hesitate to contact me by sending an email to <a

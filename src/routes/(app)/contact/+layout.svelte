@@ -6,7 +6,7 @@
 </script>
 
 <div class="flex flex-col items-center">
-  <Header>Work</Header>
+  <Header>Contact</Header>
 
   <Card hoverEffect={false}>
     <div class="prose text-white md:m-4">

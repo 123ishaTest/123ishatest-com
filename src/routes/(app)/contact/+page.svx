@@ -1,0 +1,31 @@
+<script lang="ts">
+  import ContactCard from '$lib/components/ContactCard.svelte';
+</script>
+
+I am interested in helping companies improve their work efficiency by creating and improving tools they use often.
+
+My theoretical background is in Computer Science, and I have over 10 years of experience spanning topics such as full-stack web, mobile, game design, robotics and more!
+I pride myself on my wide range of skills and ability to pick up new technologies quickly.
+
+If you like me to speak at your conference, develop a tool, design a game,
+or work together in any other capacity, feel free to send me an email at <a href="mailto:info@123ishatest.com">info@123ishatest.com</a>!
+
+You can find me elsewhere too!
+
+<div class="grid grid-cols-1 gap-4 md:grid-cols-2">
+  <ContactCard title="LinkedIn" href="https://www.linkedin.com/in/isha-dijcks-875373139/">
+    This is where I share life-changing stories about B2B sales
+  </ContactCard>
+
+  <ContactCard title="GitHub" href="https://github.com/123ishatest">
+    Here you will find many open source projects!
+  </ContactCard>
+
+  <ContactCard title="Youtube" href="https://www.youtube.com/@123ishaTest">
+    If I ever decide to step in front of a camera, this is where you'll find out
+  </ContactCard>
+
+  <ContactCard title="Discord" href="https://discord.gg/HS3SEgdEvg">
+    A more direct chat mostly focused on game development
+  </ContactCard>
+</div>

@@ -6,7 +6,7 @@ export const projects: Project[] = [
   {
     id: 'ludiek',
     title: 'Ludiek',
-    description: 'The game engine that focuses on the fun. A data-driven successor of the Incremental Game Template',
+    description: 'The game engine that focuses on the fun. A data-driven successor of the Incremental Game Template.',
     date: '2026-present',
     image: asset('/images/ludiek.png'),
     url: 'https://ludiek.123ishatest.com',
@@ -14,7 +14,7 @@ export const projects: Project[] = [
   {
     id: 'lands-unknown',
     title: 'Lands Unknown',
-    description: 'Lands Unknown is a fantasy ludiverse spanning across various games',
+    description: 'Lands Unknown is a fantasy ludiverse spanning across various games.',
     date: '2026-present',
     image: asset('/images/lands-unknown.png'),
     url: 'https://lands-unknown.com',
@@ -49,7 +49,8 @@ export const projects: Project[] = [
   {
     id: 'incremental-game-template',
     title: 'Incremental Game Template!',
-    description: 'A collection of useful scripts to help you develop incremental games',
+    description:
+      'A collection of useful scripts to help you develop incremental games. I am proud to say that 7 people used it to create a game with!',
     date: '2022',
     image: asset('/images/incremental-game-template.png'),
     url: 'https://123ishatest.github.io/igt-docs',
@@ -57,7 +58,8 @@ export const projects: Project[] = [
   {
     id: 'stable-jewels',
     title: 'Stable Jewels',
-    description: 'A silly incremental game prototype that turned out quite fun!',
+    description:
+      'A silly incremental game prototype that turned out quite fun! It was created in 1 day using nothing but the Incremental Game Template and a throwing dart to randomly select 3 features.',
     date: '2021',
     image: asset('/images/stable-jewels.png'),
     url: 'https://123ishatest.github.io/stable-jewels',
@@ -65,7 +67,8 @@ export const projects: Project[] = [
   {
     id: 'card-quest',
     title: 'Card Quest',
-    description: 'A Deck-building incremental game created for the r/incremental_games 2021 jam!',
+    description:
+      'A Deck-building incremental game created for the r/incremental_games 2021 jam! It also exists as a physical board game!',
     date: '2021',
     image: asset('/images/card-quest.png'),
     url: 'https://ishad.itch.io/card-quest',
@@ -73,7 +76,8 @@ export const projects: Project[] = [
   {
     id: 'gamehop',
     title: 'Gamehop',
-    description: 'An attention divider incremental made for 2020 r/incremental_games jam!',
+    description:
+      "An attention divider incremental made for 2020 r/incremental_games jam! This is the only game I've ever made where almost everyone agreed it was terrible!",
     date: '2020',
     image: asset('/images/gamehop.png'),
     url: 'https://ishadijcks.github.io/incremental-games-2020-jam',
@@ -81,7 +85,8 @@ export const projects: Project[] = [
   {
     id: 'timehop',
     title: 'Timehop',
-    description: 'A time travel incremental made for Ludum Dare 47',
+    description:
+      'A time travel incremental made for Ludum Dare 47. It provides an interesting twist on the usual "prestige" mechanic prevalent in incremental games',
     date: '2020',
     image: asset('/images/timehop.png'),
     url: 'https://ldjam.com/events/ludum-dare/47/timehop',
@@ -89,7 +94,7 @@ export const projects: Project[] = [
   {
     id: 'project-march',
     title: 'Project March',
-    description: 'Building robotic legs so that paraplegic patients can walk again',
+    description: 'A full-time student team building robotic legs so that paraplegic patients can walk again.',
     date: '2019',
     image: asset('/images/project-march.png'),
     url: 'https://www.projectmarch.nl/',

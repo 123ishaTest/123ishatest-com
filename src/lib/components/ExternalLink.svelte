@@ -10,6 +10,6 @@
   let { children, href, target = '_blank' }: Props = $props();
 </script>
 
-<a {href} {target}>
+<a {href} {target} rel="external">
   {@render children()}
 </a>
