@@ -13,7 +13,7 @@ export const piano: BlogPost = {
 
 export const beatBox: BlogPost = {
   id: 'beat-box',
-  title: 'BeatBox',
+  title: 'BeatBox - A musical cube',
   description:
     "Whether you don't know the difference between D# and Eb or are secretly a master of Audacity, the BeatBox will be a fun musical experience for all!",
   date: '01/04/2025',

@@ -1,28 +1,106 @@
 <script lang="ts">
   import { base, resolve } from '$app/paths';
-
+  import EasterEgg from '$lib/components/EasterEgg.svelte';
+  import ExternalLink from '$lib/components/ExternalLink.svelte';
+  import Todo from '$lib/components/Todo.svelte';
 </script>
 
 
 ## BeatBox
 
-A long time ago I got inspired by a musical thing I saw at a festival.
-It had tiles you could move on a grid to manipulate sounds.
-When I realised it changed the background music, it blew my mind so badly that I forgot about it for the next 8 years.
+Ever since I was a child I had a dream to some day be able to play the piano.
+As it turned out, _learning_ how to play an instrument is not nearly as fun.
+Lacking the willpower and determination, my practice was limited to one hour of frustrated key bashing once every few months.
 
-Suddenly remembering, I decided to recreate it! In my mind it looked something like this
+Many years later with even more life lessons under my belt, I still lack the <EasterEgg egg="I learned some better words though">conviction</EasterEgg>
+to practice daily.
+Luckily one of the skills that I have picked up is engineering and as we will find out, that's all you really need!
+
+Today we will go through the adventure of creating our own music instrument.
+Not one that takes years to master, but a fun interactive activity for your next dinner party.
+Without further ado, I present to you: _The BeatBox_
+
 ![Beatbox model]({base}/images/beatbox/beatbox-model.jpg)
+Or well, <EasterEgg egg="On second thought let's not make too many Holy Grail references, it's rather a silly movie.">it's only a model</EasterEgg>.
+The _BeatBox_ is a cube (or box, if you will) with a glass plate on top.
+Along the edges of the glass plate sit various tiles that you can place on top of the box.
+Each tile represents a unique sound that will play when placed on the glass.
+By mixing and matching different tiles you can create all kinds of fun songs (or <EasterEgg egg="I think they get it">beats</EasterEgg>, if you will).
 
-A camera scans the tiles through the glass and plays musical samples on a loop.
-Users can place various tiles which sound good (or bad) together to create their own songs.
-
-The placement of the tile matters! One axis controls the volume, while the other does a pitch shift.
-
-![Beatbox progress]({base}/images/beatbox/beatbox-progress.png)
-
-If I ever get a decent microphone I will upload a video of it making sound, but for now these pictures will have to do!
-
+Here it is for real this time!
 ![Beatbox open]({base}/images/beatbox/beatbox-open.jpg)
 
-And of course no project is done until it has LED lighting...
-![Beatbox led]({base}/images/beatbox/beatbox-led.jpg)
+## Technicalities
+
+Because the actual technical details are relatively simple, we will keep it light.
+There won't even be <EasterEgg egg="But now that you asked: https://github.com/ishadijcks/beatbox">any code</EasterEgg> today.
+
+The BeatBox is powered by a Raspberry Pi 5 attached to a camera that is pointed at the frosted glass.
+It detects what tiles are on the glass and where, and provides that information to the audio player.
+The audio player is secretly playing all samples at the same time, but the ones that are undetected are muted.
+The detected samples get their volume set based on the position of the corresponding tile.
+This audio is then output into a standard 3.5mm jack, allowing you to connect the BeatBox to your own music system!
+
+### Tile Detection
+
+Each tile has an <ExternalLink href="https://en.wikipedia.org/wiki/ARTag">ArUco</ExternalLink> marker that can be detected.
+Unlike QR codes that can represent any value, ArUco markers contain a single number from a fixed set of numbers, in our case 1-40.
+This makes them much smaller and <EasterEgg egg="And much more difficult to hide secrets in, but not impossible">quicker to decode</EasterEgg>.
+
+<div class="flex space-x-2">
+  <div>
+    <img class="mt-0 mb-0" src="{resolve('/images/beatbox/aruco-a.png')}" alt="ArUco A">
+  </div>
+  <div>
+    <img class="mt-0 mb-0" src="{resolve('/images/beatbox/aruco-b.png')}" alt="ArUco B">
+  </div>
+  <div>
+    <img class="mt-0 mb-0" src="{resolve('/images/beatbox/aruco-c.png')}" alt="ArUco C">
+  </div>
+  <div>
+    <img class="mt-0 mb-0" src="{resolve('/images/beatbox/aruco-d.png')}" alt="ArUco D">
+  </div>
+</div>
+
+### Glass
+As someone who had never bought glass before, I was surprised to see how many different kinds of glass there are.
+Overwhelmed with possibility I stood there, <EasterEgg egg="yeah">glassy-eyed</EasterEgg>, until a very attentive employee helped me out.
+I went with frosted glass, which has a nice light diffusing property.
+Only when a tile is placed directly on the it, it is clear from the other side.
+When hovering the tile a few centimeters above, it gets too blurry for the camera to pick up.
+This prevents the feeling that a sample starts "too soon", and prevents me from wasting time developing a software solution.
+Win-win!
+
+<div class="flex space-x-2">
+  <div>
+    <img class="mt-0 mb-0" src="{resolve('/images/beatbox/frosted-glass.gif')}" alt="Frosted Glass">
+  </div>
+  <div>
+    <img class="mt-0 mb-0" src="{resolve('/images/beatbox/frosted-glass-bw.gif')}" alt="Frosted Glass Black & White">
+  </div>
+</div>
+
+### Samples
+At first I wanted to comission an (actual) artist to create some samples that worked nicely together, but then my attention got caught by sample packs.
+I bought one containing 8000 samples from <ExternalLink href="https://www.ejayshop.com/product/ejay-sound-collection-1/">Ejay</ExternalLink>.
+I spend some time combing through the samples, trying to curate ones that would fit together nicely.
+This was not fun, so I artistically decided that it would be better if trying out all samples is also part of the <EasterEgg egg="Artistic liberty is one helluva drug!">experience</EasterEgg>!
+A sample pack of 30 different samples is randomly generated by a script that matches on bpm and duration, leading to countless variations!
+
+## Conclusion
+
+<iframe
+  class="w-full aspect-16/9"
+  src="https://www.youtube-nocookie.com/embed/DFdhQCs-dIk?si=8OK9RCWpZAjlQ0c4"
+  allowfullscreen
+/>
+
+The BeatBox is a very fun _interactive curiousity_ that has an addicting simplicity.
+I've watched many people play with it now, and it's interesting how different <EasterEgg egg="I'm sure you can distill some sort of personality type out of how people interact with it. Doesn't seem any sillier than Myers-Briggs to me.">some people</EasterEgg> use it.
+Some first sort all the samples into different instruments, discarding ones they don't like.
+Others just throw on everything, then remove what doesn't sound good.
+
+One day I would like to get it in the hands of an (actual) musician to see what they can do with it.
+Until then it functions as a decent coffee table.
+
+Thank you for reading!
