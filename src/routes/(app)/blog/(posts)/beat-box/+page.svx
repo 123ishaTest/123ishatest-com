@@ -2,11 +2,7 @@
   import { base, resolve } from '$app/paths';
   import EasterEgg from '$lib/components/EasterEgg.svelte';
   import ExternalLink from '$lib/components/ExternalLink.svelte';
-  import Todo from '$lib/components/Todo.svelte';
 </script>
-
-
-## BeatBox
 
 Ever since I was a child I had a dream to some day be able to play the piano.
 As it turned out, _learning_ how to play an instrument is not nearly as fun.

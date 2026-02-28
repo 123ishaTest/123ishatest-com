@@ -10,6 +10,10 @@
   const blogName = $derived(projects.find((p) => resolve(p.url) === page.url.pathname)?.title ?? 'Blog');
 </script>
 
+<svelte:head>
+  <title>123IshaTest | {blogName}</title>
+</svelte:head>
+
 <div class="flex flex-col items-center space-y-4">
   <Header>{blogName}</Header>
 

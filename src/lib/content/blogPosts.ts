@@ -1,4 +1,5 @@
 import type { BlogPost } from '$lib/model/BlogPost';
+import { asset } from '$app/paths';
 
 export const piano: BlogPost = {
   id: 'piano',
@@ -16,8 +17,8 @@ export const beatBox: BlogPost = {
   title: 'BeatBox - A musical cube',
   description:
     "Whether you don't know the difference between D# and Eb or are secretly a master of Audacity, the BeatBox will be a fun musical experience for all!",
-  date: '01/04/2025',
-  image: '',
+  date: '01/03/2026',
+  image: asset('/images/beatbox/beatbox-led.jpg'),
   tags: ['games'],
   path: '/(app)/blog/(posts)/beat-box',
 };
@@ -34,15 +35,15 @@ export const foolsball: BlogPost = {
 };
 
 export const blogPosts: BlogPost[] = [
-  piano,
-  {
-    id: 'unique-puzzle',
-    title: 'Unique Puzzles',
-    description: 'A short story about the awesomeness of puzzles',
-    date: '01/01/2026',
-    image: '',
-    tags: ['games'],
-    path: '/(app)/blog/(posts)/puzzles',
-  },
+  // piano,
+  // {
+  //   id: 'unique-puzzle',
+  //   title: 'Unique Puzzles',
+  //   description: 'A short story about the awesomeness of puzzles',
+  //   date: '01/01/2026',
+  //   image: '',
+  //   tags: ['games'],
+  //   path: '/(app)/blog/(posts)/puzzles',
+  // },
   beatBox,
 ];
