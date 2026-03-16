@@ -5,8 +5,8 @@
 </script>
 
 <div class="flex w-full flex-col items-center p-4">
-  <Card>
-    <div class="prose text-white">
+  <Card hoverEffect={false}>
+    <div class="prose prose-isha">
       {@render children()}
     </div>
   </Card>

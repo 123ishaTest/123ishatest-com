@@ -9,7 +9,7 @@
   <Header>Contact</Header>
 
   <Card hoverEffect={false}>
-    <div class="prose text-white md:m-4">
+    <div class="prose prose-isha md:m-4">
       {@render children()}
     </div>
   </Card>

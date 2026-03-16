@@ -11,7 +11,7 @@
 {#each blogPosts as blogPost (blogPost.id)}
   <Link href={blogPost.path}>
     <Card>
-      <div class="text-white md:m-4 md:w-lg">
+      <div class="md:m-4 md:w-lg">
         <Title>{blogPost.title}</Title>
         <span class="relative -top-4 opacity-40">{blogPost.date}</span>
 

@@ -1,3 +1,5 @@
+@import url('/themes/darcula.css');
+
 :root {
   --white: #ffffff;
   --black: #000000;
@@ -26,9 +28,13 @@
   --tw-prose-headings: var(--header-color);
 }
 
-* {
+body {
   font-family: var(--font-primary), serif;
+}
+
+.prose-isha {
   --tw-prose-headings: var(--header-color);
+  --tw-prose-body: var(--text-primary);
 }
 
 .blueprint {
