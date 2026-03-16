@@ -18,7 +18,7 @@
   <Header>{blogName}</Header>
 
   <Card hoverEffect={false}>
-    <div class="prose text-white md:m-4 md:w-xl">
+    <div class="prose prose-isha md:m-4 md:w-xl">
       {@render children()}
     </div>
   </Card>
