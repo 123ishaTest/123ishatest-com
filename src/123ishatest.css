@@ -35,6 +35,7 @@ body {
 .prose-isha {
   --tw-prose-headings: var(--header-color);
   --tw-prose-body: var(--text-primary);
+  --tw-prose-code: var(--text-primary);
 }
 
 .blueprint {
