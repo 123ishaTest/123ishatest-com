@@ -2,12 +2,12 @@
   import Card from '$lib/components/Card.svelte';
   import Header from '$lib/components/Header.svelte';
   import { page } from '$app/state';
-  import { projects } from '$lib/content/projects.ts';
   import { resolve } from '$app/paths';
+  import { blogPosts } from '$lib/content/blogPosts.ts';
 
   let { children } = $props();
 
-  const blogName = $derived(projects.find((p) => resolve(p.url) === page.url.pathname)?.title ?? 'Blog');
+  const blogName = $derived(blogPosts.find((p) => resolve(p.path) === page.url.pathname)?.title ?? 'Blog');
 </script>
 
 <svelte:head>
@@ -18,8 +18,10 @@
   <Header>{blogName}</Header>
 
   <Card hoverEffect={false}>
-    <div class="prose prose-isha md:m-4 md:w-xl">
-      {@render children()}
+    <div class="grid grid-cols-1">
+      <div class="prose prose-isha md:m-4 md:w-2xl">
+        {@render children()}
+      </div>
     </div>
   </Card>
 </div>
