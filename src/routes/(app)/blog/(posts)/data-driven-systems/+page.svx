@@ -1,0 +1,100 @@
+<script lang="ts">
+  import EasterEgg from '$lib/components/EasterEgg.svelte';
+</script>
+
+Years ago I released the [Incremental Game Template](https://123ishatest.github.io/igt-docs/) (IGT) which I then called "*A collection of useful scripts to help you develop incremental games*".
+While that was technically true, it served mostly as an archive for me to store all the game development work I had done over the years.
+As the template grew it not only contained more game mechanics, but also more concrete implementations of my games.
+It became more and more difficult to separate mechanics from content, making it nearly impossible for <EasterEgg egg="Turns out there are a lot of those!">people who are not me</EasterEgg> to benefit from the project.
+
+Today we will dive into those distinctions alongside the lessons I've learned deprecating IGT, and how my new game engine [Ludiek](https://ludiek.123ishatest.com) does <EasterEgg egg="Obviously">everything way better</EasterEgg>.
+
+## Behaviour vs Content
+Over the years I have become a big proponent of separating behaviour from content.
+This is most prominent in applications with a large amount of content, such as games.
+But I believe keeping this divide in mind will help you design cleaner applications no matter what you are creating!
+
+- *Behaviour* encompasses the logic of your application, decisions that need to be taken based on the state and content we are operating on.
+- *Content* is the static data of your application. Be it items in an RPG, routing tables in an SPA, Content in a <EasterEgg egg="I think that's why it's called that">CMS</EasterEgg>. It is *not* state.
+
+One advantage becomes immediately obvious, the implementation of behaviour is <EasterEgg egg="I am not here to start a war about OOP vs functional. But my stance is that Spacetime exists for a reason.">pure</EasterEgg> and deterministic.
+This improves testability, composability and maintainability!
+
+## In practice
+Enough theory crafting, what does it look like in practice? What went wrong with IGT?
+IGT contained functionality for `Items` and `Inventory` as most games use some sort of an inventory system.
+In its most basic form it is a way to track how many you have of certain items.
+Some items have special interactions: Materials can be processed, Armour can be equipped, and Consumables can be... consumed.
+Here is how we would define a consumable `Bread` item in IGT, it restores 10 health when eaten.
+
+
+```ts
+class SlicedBread extends Consumable {
+  public name = "Sliced Bread"
+
+  public consume() {
+    player.restoreHealth(10)
+  }
+}
+```
+
+On first sight it looks sensible, there is little boilerplate and the consume function is succinct.
+But what if the `consume` function grows more complex?
+What if we have different kinds of food that all trigger the same code when consumed? We'd have to repeat the consuming logic everywhere.
+But even worse, this game content is now defined in code, meaning game designers need to dive into the codebase to balance the game.
+They don't like that.
+
+Let's separate the behavior from the content! We need to restore health based on the provided amount.
+```ts
+class RestoreHealth extends ConsumableEffect {
+  type: 'restore-health';
+
+  public args: {
+    amount: number,
+  }
+
+  public apply(args) {
+    player.restoreHealth(args.amount)
+  }
+}
+```
+
+And the content becomes much cleaner!
+
+```yaml
+# sliced-bread.item.yaml
+name: Sliced Bread
+onConsume:
+  type: restore-health
+  amount: 10
+```
+
+While there is an initial investment of having to create the `RestoreHealth`, we now have it forever.
+Every item can be turned into a consumable by adding 3 lines of data, and no extra code.
+
+That is the essence of data-driven design: Isolate behaviors as small as possible, and let your static data compose it to achieve your desired behaviour!
+
+Game designers often believe that data-driven games lose some of their magic.
+When all your content has to adhere to rigid systems, unique mechanics are more difficult to implement.
+While this could happen, realise you are expecting your developers not to <EasterEgg egg="They like that">overengineer</EasterEgg> a system that can support even your wildest dreams.
+
+## Ludiek
+
+Speaking of wild dreams, with this new data-driven approach I have been designing and building [_Ludiek_](https://ludiek.123ishatest.com/), the game engine that focuses on the fun.
+It is the spiritual successor of IGT, but with a plugin-based architecture so you can mix and match whatever you need!
+
+Today we mostly discussed moving from level 1 towards level 2, but Ludiek pushes all the way to <EasterEgg egg="on this scale I just invented. No I will not elaborate">level 3</EasterEgg>!
+
+```ts
+// level 1              // level 2                         // level 3                                                                                    // Level ∞
+if (money > 100) {      if (money > upgrade.cost)) {       if (canAfford(upgrade.cost)) {                                                                do()
+  money -= 100            money -= upgrade.cost;             spend(upgrade.cost)
+  power += 2;             power += upgrade.powerGain;        apply(upgrade.benefit)
+}                       }                                  }
+```
+
+With these abstractions we can create plugins that operate on the most abstract of concepts.
+
+If you are <EasterEgg egg="Which you should be. Not for this specifically, but like in general.">curious</EasterEgg>, you can read more on it [here](https://ludiek.123ishatest.com/docs/introduction/welcome), or stay tuned for the next blog post!
+
+Thanks for reading!
