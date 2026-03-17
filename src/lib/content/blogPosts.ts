@@ -1,6 +1,16 @@
 import type { BlogPost } from '$lib/model/BlogPost';
 import { asset } from '$app/paths';
 
+export const dataDrivenSystems: BlogPost = {
+  id: 'data-driven-systems',
+  title: 'Game engines, Sliced bread, and data-driven systems',
+  description: 'Designing data-driven systems by separating behavior from content.',
+  date: '16/03/2026',
+  image: asset('/images/data-driven-systems/sliced-bread-yaml.png'),
+  tags: ['games', 'overengineering'],
+  path: '/(app)/blog/(posts)/data-driven-systems',
+};
+
 export const piano: BlogPost = {
   id: 'piano',
   title: 'Video game piano',
@@ -34,16 +44,4 @@ export const foolsball: BlogPost = {
   path: '/(app)/blog/(posts)/foolsball',
 };
 
-export const blogPosts: BlogPost[] = [
-  // piano,
-  // {
-  //   id: 'unique-puzzle',
-  //   title: 'Unique Puzzles',
-  //   description: 'A short story about the awesomeness of puzzles',
-  //   date: '01/01/2026',
-  //   image: '',
-  //   tags: ['games'],
-  //   path: '/(app)/blog/(posts)/puzzles',
-  // },
-  beatBox,
-];
+export const blogPosts: BlogPost[] = [dataDrivenSystems, beatBox];
