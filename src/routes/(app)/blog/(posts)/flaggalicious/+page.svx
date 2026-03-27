@@ -1,0 +1,169 @@
+<script lang="ts">
+  import { asset } from '$app/paths';
+  import EasterEgg from '$lib/components/EasterEgg.svelte';
+  import ExternalLink from '$lib/components/ExternalLink.svelte';
+  import Link from '$lib/components/Link.svelte';
+
+  const tricolor = asset('/images/flaggalicious/horizontal-tricolor.png');
+  const flaggalicious = asset('/images/flaggalicious/flaggalicious.png');
+</script>
+
+High school was an <EasterEgg egg="An experience unique to me, I reckon">interesting time</EasterEgg> for me.
+I don't think I have ever been so creatively active without having any skills to actually create what I wanted to make.
+Today we will learn about a game idea that was conceived in high school, yet developed about 10 years later.
+
+Interested in programming as I was, I did everything to turn some of my homework into programming exercises.
+For our final year project, we made a <ExternalLink href="https://ishadijcks.github.io/profielwerkstuk/">Stock Exchange Simulator</ExternalLink>.
+It was terrible: We hardcoded everything, shared code through USB sticks, and copy pasted logic everywhere (we only learned about arrays halfway through).
+
+In the <Link href="/(app)/blog/data-driven-systems">last blog</Link> we <EasterEgg egg="I believe this is what the business boys call 'cross branding'">learned about</EasterEgg> separating content from behaviour, but we did none of that here.
+Here is a snippet of that project, <EasterEgg egg="Yes that is JQuery! Remember JQuery?">a true masterpiece</EasterEgg>.
+
+```ts
+if(levelUpgrade === 1){
+  if (chance > downChance[i]+20 && chance < downChance[i]+45) {
+  // Minimal raise
+  price2[i]+=chance/10-5
+  $("<span style=color:green class=AText id=number> "+price2[i].toFixed(2)+" </span>").appendTo("#stock"+i);                                                                                                     //De nieuwe prijs wordt veranderd door het willekeurige getal te vergelijken met de huidige prijs
+}
+  else if (chance > downChance[i]+46) {
+  // Big raise
+  price2[i]+=chance/9     ;
+  $("<span style=color:green class=AText id=number> "+price2[i].toFixed(2)+" </span>").appendTo("#stock"+i);
+}
+  else if (chance < downChance[i]-20 && chance > downChance[i]-44) {
+  // Minimal decrease
+  price2[i]-=chance/10+2;
+  $("<span style=color:red class=AText id=number> "+price2[i].toFixed(2)+" </span>").appendTo("#stock"+i);
+}
+  else if (chance < downChance[i]-45) {
+  // Big decrease
+  if (chance <= 5) {
+  price2[i]-=chance*3;
+}
+  else {
+  price2[i]-=chance/3;
+}
+}
+  ```
+
+_By now you should understand how terrible I was at programming in high school._
+_It is integral to the story!_
+
+## The idea
+
+Back in the day Quiz type games were incredibly popular.
+You had to guess a movie or a character based on a silhouette and were given a few letters so you could at least guess if you didn't know.
+Although that mostly served as a vehicle to buy coins with real money.
+
+<div class="flex flex-row justify-center">
+  <img class="w-48" src="https://fastly.mwm-storage.mwmcdn.com/raw_files/90e4d729-a6f8-47eb-ba3a-92df9206cb36?height=1280&format=webp" alt="Can you guess who it is?">
+</div>
+
+Nerdboys that we were, we wanted to create a version where instead of guessing popular things that everyone likes, you would have to guess flags.
+And instead of guessing the name of each country which would have been doable, the player had to color in the outline of the flag!
+As there are many flags with an identical outline, you get a trivia clue to help you solve it.
+
+<figure class="flex flex-col items-center">
+  <img
+    src={tricolor}
+    alt="Can you guess what flag it is?"
+  />
+  <figcaption class="text-white italic">That's right, it's France!</figcaption>
+</figure>
+
+
+The idea was born: _Flaggalicious_
+
+Enthousiastically as we were, we compiled a list of countries, their flags and trivia clues that described them.
+And then we did... nothing.
+
+Or to be more correct, I did nothing.
+I had bluffed that I would do the programming for this project, but I didn't.
+Not because of lazyness or bad will, I simply couldn't.
+The project was too difficult for me at the time.
+As we have seen in the introduction, I just didn't have the skills.
+
+## Current day
+
+10 years later, a fully qualified software engineer, I was <EasterEgg egg="To migrate away from it. As everyone should!">cleaning up my Google Drive</EasterEgg> and came across some interesting files.
+The original designs for _Flaggalicious_!
+
+It contains all the clues. Thank you <EasterEgg egg="Seriously, migrate">Google Drive</EasterEgg>!
+
+It even included my first attempt at making it, a snippet for you code gourmets:
+```ts
+if (colors[0] === answerGermany[0] && colors[1] === answerGermany[1]
+  && colors[2] === answerGermany[2] && flag === "Germany"  ) {
+  $(".level1").hide();
+  $("#France").show();
+  flag = "France";
+  clicks = 1;
+  correct();
+}
+```
+
+## Flaggalicious
+
+Time to implement it.
+As I really should be looking for clients (hire me), I gave myself <EasterEgg egg="It ended up as two. Not bad!">one day</EasterEgg> to finish building the game.
+
+When I want to share something with the world, a website is the obvious choice.
+When you want to make a good website, <ExternalLink href="https://svelte.dev/">Svelte</ExternalLink> is the <EasterEgg egg="Why the world prefers react baffles me">obvious choice</EasterEgg>.
+
+Implementing the gameplay was a bit of work, but nothing I hadn't done before.
+The hard part as always is the user interface. The dragging and dropping of the colors to paint the flags was luckily solved by <ExternalLink egg="https://dndkit.com/">someone else</ExternalLink> already!
+
+But the real pain was recreating the flags on the web.
+I found a <ExternalLink href="https://hampusborgos.github.io/country-flags/">relatively complete SVG set of all flags</ExternalLink>, but there was a big problem.
+
+Simplified, SVG works by drawing shapes on top of each other.
+Consider the flag of Japan: <EasterEgg egg="Spoiler alert!">A circle on top of a rectangle</EasterEgg>.
+Seems easy enough, but when everything is transparent we run into trouble.
+When we color the background white, it will bleed through to the circle in the middle, ruining the puzzle.
+
+I had to stick to the original list of 33 countries, which were very much not chosen for their simplicity.
+I have spend hours recreating the flags in <EasterEgg egg="If you have experience with SVG masks, you feel my pain"> SVG to avoid the visual bleed</EasterEgg>.
+It was not fun.
+I ended up with 20 different flag outlines, out of which 14 were only used <EasterEgg egg="Did I mention it was not fun?">once</EasterEgg>.
+
+I used <ExternalLink href="https://ludiek.123ishatest.com/docs/complementaries/louter">Louter</ExternalLink>, my content parser designed to handle games with large amounts of content.
+Each puzzle can be described like this:
+```yaml
+id: /flag/the-netherlands
+country: The Netherlands
+hint: This country is also known by two of its provinces
+layout: horizontal-tricolor
+solution:
+  top: red-dark
+  middle: white
+  bottom: blue-dark
+```
+
+Which made adding the <EasterEgg egg="You might notice the United Kingdom is not in the game.">32</EasterEgg> puzzles quite a breeze!
+
+
+Because of the limited time, I reused the styling from this portfolio website!
+To top it off I created a logo on <ExternalLink href="https://cooltext.com">Cooltext.com</ExternalLink>, the <EasterEgg egg="and yes I do know about https://pixelsfighting.com">best website to ever exist</EasterEgg>.
+
+After 10 years in development, I am happy to present you _Flaggalicious_, a vexillological puzzle game!
+
+<ExternalLink href="https://flaggalicious.123ishatest.com">
+  <figure class="flex flex-col items-center">
+    <img
+      src={flaggalicious}
+      alt="Game design is not graphic design, okay"
+    />
+    <figcaption class="text-white italic">Don't mind the fractal nature of the screenshot</figcaption>
+  </figure>
+</ExternalLink>
+
+## Conclusion
+
+Don't give up on your dreams?
+The right idea might not come at the right time?
+High school is rough?
+
+I don't know, but I made a silly game for you to enjoy, <ExternalLink href="https://flaggalicious.123ishatest.com">go play it here</ExternalLink>!
+
+Thank you for reading!

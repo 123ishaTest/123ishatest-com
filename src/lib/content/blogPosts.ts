@@ -1,6 +1,16 @@
 import type { BlogPost } from '$lib/model/BlogPost';
 import { asset } from '$app/paths';
 
+export const flaggalicious: BlogPost = {
+  id: 'flaggalicious',
+  title: 'Flaggalicious, a flag guessing game',
+  description: 'A vexillological puzzle game designed by high school me.',
+  date: '27/03/2026',
+  image: asset('/images/flaggalicious/level-1.png'),
+  tags: ['games'],
+  path: '/(app)/blog/(posts)/flaggalicious',
+};
+
 export const dataDrivenSystems: BlogPost = {
   id: 'data-driven-systems',
   title: 'Game engines, Sliced bread, and data-driven systems',
@@ -44,4 +54,4 @@ export const foolsball: BlogPost = {
   path: '/(app)/blog/(posts)/foolsball',
 };
 
-export const blogPosts: BlogPost[] = [dataDrivenSystems, beatBox];
+export const blogPosts: BlogPost[] = [flaggalicious, dataDrivenSystems, beatBox];
