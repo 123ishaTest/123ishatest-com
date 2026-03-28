@@ -4,7 +4,8 @@ import { asset } from '$app/paths';
 export const flaggalicious: BlogPost = {
   id: 'flaggalicious',
   title: 'Flaggalicious, a flag guessing game',
-  description: 'A vexillological puzzle game designed by high school me.',
+  description:
+    'A vexillological puzzle game designed by high school me. Can you recognise the countries of the world and color their flags?',
   date: '27/03/2026',
   image: asset('/images/flaggalicious/level-1.png'),
   tags: ['games'],
