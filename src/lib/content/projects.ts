@@ -1,5 +1,5 @@
 import type { Project } from '$lib/model/Project';
-import { beatBox, flaggalicious, foolsball, piano } from '$lib/content/blogPosts';
+import { beatBox, cannonball, flaggalicious, foolsball, piano } from '$lib/content/blogPosts';
 import { asset, resolve } from '$app/paths';
 
 export const projects: Project[] = [
@@ -18,6 +18,13 @@ export const projects: Project[] = [
     date: '2026-present',
     image: asset('/images/lands-unknown.png'),
     url: 'https://lands-unknown.com',
+  },
+  {
+    ...cannonball,
+    title: 'Cannonball',
+    url: resolve(cannonball.path),
+    image: asset('/images/cannonball/cannonball-test.png'),
+    date: '2026',
   },
   {
     ...flaggalicious,

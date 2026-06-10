@@ -1,6 +1,17 @@
 import type { BlogPost } from '$lib/model/BlogPost';
 import { asset } from '$app/paths';
 
+export const cannonball: BlogPost = {
+  id: 'cannonball',
+  title: 'Cannonball - multiplayer street game',
+  description:
+    'Cannonball is a multiplayer street game where passersby can play an exciting game of football against each other',
+  date: '29/05/2026',
+  image: asset('/images/cannonball/cannonball-test.png'),
+  tags: ['installation'],
+  path: '/(app)/blog/(posts)/cannonball',
+};
+
 export const flaggalicious: BlogPost = {
   id: 'flaggalicious',
   title: 'Flaggalicious, a flag guessing game',
@@ -55,4 +66,4 @@ export const foolsball: BlogPost = {
   path: '/(app)/blog/(posts)/foolsball',
 };
 
-export const blogPosts: BlogPost[] = [flaggalicious, dataDrivenSystems, beatBox];
+export const blogPosts: BlogPost[] = [cannonball, flaggalicious, dataDrivenSystems, beatBox];

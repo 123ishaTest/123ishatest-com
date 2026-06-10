@@ -1,0 +1,200 @@
+<script lang="ts">
+  import { base, resolve } from '$app/paths';
+  import EasterEgg from '$lib/components/EasterEgg.svelte';
+  import ExternalLink from '$lib/components/ExternalLink.svelte';
+</script>
+
+In the beginning of this year I quit my software engineering job to become a full-time freelancer.
+As I did not have any clients lined up I am always looking for more work opportunities.
+While commercially I develop software solutions for small to medium businesses, I would love to eventually do more <span class="line-through">nonsensical</span> artistic projects.
+
+This is the story of such a a creative project.
+It is a fun story that contains <EasterEgg egg="But don't worry, it is also enjoyable if you are not a nerd!">Asteroids, Projectors, and Math</EasterEgg>.
+
+It all started when I noticed a local subsidy from my municipality.
+The goal was to give the night life of The Hague an "impulse".
+Apparently they think that the city is too boring between <EasterEgg egg="I have to say I agree, I'm nearly always sleeping">00:00 and 06:00</EasterEgg>.
+
+While reading through the subsidy, something caught my eye.
+It listed categories of art and I saw the usual suspects: Music, Movies, Dance, but the final category was *Games*.
+Which is amazing, I did not know that the government was aware of the existence of videogames!
+
+Now I have been making games for years now and releasing them <EasterEgg egg="Like an idiot">for free</EasterEgg>.
+But this was my chance to instantly become a *professional* game developer on a technicality!
+I could design an experience that is playable right there on the street.
+
+It provides an interesting way to design a game.
+Usually you come up with some game mechanics that you wrap in a story.
+But now we are designing with an experience in mind.
+
+So with this experience angle I came up with the following requirements:
+- The game can be played by everyone who walks passed it on the the street.
+  It should be intuitive and easy to play, so controls must be simple.
+- Players should be able to leave and join without impacting the flow of the game.
+  This means that something like teaming up players is not possible, as the members of one team could leave all of a sudden.
+- There should also not be any waiting time or "rounds" as people might not have the patience to stick around until the next event.
+  Remember I am asking people to stay on the street, in the cold, <EasterEgg egg="It must be worth the risk">at night</EasterEgg>.
+
+## The idea
+With all these experience constraints in mind, all that is left is to come up with an actual game idea.
+I was inspired by a trend of web games from a while ago: The *.io* genre.
+Most famously agar.io. In this game you are a blob of agar, eating smaller blobs until you grow big and strong.
+You can also eat other players, killing them in the process and absorbing their power.
+This naturally leads to a leaderboard where you can see who has the most mass.
+Making your first appearance in the top 10 is a fun moment. And reaching the top doubly so.
+
+<div class="flex flex-row justify-center">
+  <img src="{base}/images/cannonball/agar-io.png" alt="Agar.io"/>
+</div>
+
+These mechanically simple games where you are competing against strangers on a leaderboard are the perfect fit for what I'm trying to achieve!
+
+## Requesting the subsidy
+Armed with a <EasterEgg egg="Or at least, the concept of one">great idea</EasterEgg>, it's time to convince the government that I am so awesome they should give me money.
+The rules mentioned that they had a certain budget available, and they would process requests in order of arrival.
+Pitching and sales has never been my strong suit, so this part took a lot of time.
+It was especially stressful feeling like spending just one hour more on it could be the difference between getting or not getting it.
+So why not spend another hour, and another hour.
+
+<div class="flex flex-col items-center">
+  <img src="{base}/images/cannonball/cool-picture.jpg" alt="Cool picture"/>
+  <span class="text-xs -mt-2">Testing whether my projector works outside (it does)</span>
+</div>
+
+
+## Technical demo
+With my subsidy requested, I wanted to make a small technical demo to see if my ideas were even feasible.
+For example how passersby can instantly connect to a game server, how the game should scale with few or many players, or what visuals would work on a large projected screen.
+
+I quickly threw together a clone of asteroids in Godot.
+Players control a rocketship flying through space.
+It moves forwards automatically and you can press left and right to aim your ship towards other players, shooting them to destroy them!
+This nets you a point to climb the leaderboard, and also scales up your ship by 10%.
+Because I was lazy and increased the scale of the entity, this not only makes you bigger but also move faster.
+Initially this gives you a nice advantage, but after about 5 kills you are such an easy target that anyone can take you down, providing an interesting game loop.
+
+For this technical demo I required players to connect to the same wifi network that the game server is hosted on, while for the real event I will be using a proxy.
+
+I spend around one day on the demo as the project was not confirmed yet.
+I probably shouldn't have spend time on it at all, but I got <EasterEgg egg="What can you do?">too excited</EasterEgg>!
+
+
+## First playtest
+<div class="flex flex-row justify-center">
+  <img src="{base}/images/cannonball/asteroids.jpg" alt="Asteroids demo"/>
+</div>
+After the demo was ready, I tried it out with a bunch of friends.
+As expected a lot of people reacted very differently.
+Some instantly gravitated towards the controls and could just clean up the people still trying to find their spaceship.
+With 15 players it was indeed quite chaotic.
+Overall many liked the concept, and most complaints were in the realm of things feeling "unfair".
+Which is good critique, it means they are invested :)
+
+The big lessons learned were:
+- It was quite difficult to identify where you are, as you respawned in a different location after death
+- People really want to know who they killed so they can make fun of them. Screwing over your friends is a core part of the experience
+- The game did not scale to >12 players. In real life this probably <EasterEgg egg="If my game is no longer fun because it's too popular, that's considered a success!">won't be a problem</EasterEgg>.
+
+## A fortunate letter
+
+A couple weeks later I got a letter.
+When I opened it, it was great news!
+The subsidy had been granted and I could start my project.
+With joy and elation I started planning the next few steps.
+There was a lot of work ahead. Designing the actual game, developing it, finding a location and a date.
+
+## Game (re)design
+With the results from the playtests, I completely redesigned the game.
+The most important added requirement was that your character should not disappear, as finding it in the chaos was too difficult.
+I also wanted to improve the visual clarity of the game, making it something that people would immediately recognise from a distance.
+
+With this I had the idea of a soccer game.
+You would control a character on a circular soccer field.
+Every player's goal would span a part of the circle.
+As people joined and went, the circle could resize to fit the new amount of players.
+This took some <EasterEgg egg="I know, gross.">math</EasterEgg> to get right, and definitely did not work the first time.
+<div class="flex flex-row justify-center">
+  <video loop autoplay controls>
+    <source src="{base}/images/cannonball/border-fail.mp4" type="video/mp4">
+  </video>
+</div>
+But eventually I got it working nice and smooth.
+Even though the goals moved, it was still easy to match your name and color to the goal belonging to you.
+
+<div class="flex flex-row justify-center">
+  <video loop autoplay controls>
+    <source src="{base}/images/cannonball/border-success.mp4" type="video/mp4">
+  </video>
+</div>
+
+I then added some mechanics for giving and losing points, a notification when you scored, and created a quick frontend in Svelte that would show up on your phone when scanning the QR code.
+
+After 2 more playtests and iterations, the end result was simple yet fun and <EasterEgg egg="Also apparently there is a football world championship coming up. Did not know that but good timing">familiar for most people</EasterEgg>.
+
+<div class="flex flex-row justify-center">
+  <img src="{base}/images/cannonball/cannonball-test.png" alt="Cannonball result"/>
+</div>
+
+## Making a "product"
+I have made many weird things over the years.
+The amount of times that I have balanced a Raspberry PI and a bunch of wires while digging through boxes to find a backup cable is more than I can count.
+I wanted to turn this project into a single, physical thing that you can take anywhere, plug it in and it just works!
+
+So I made a box out of an old wine casket.
+Designed a lid that would perfectly encapsulate the projector using FreeCAD and <EasterEgg egg="I know, gross.">math</EasterEgg>.
+
+<div class="flex flex-row justify-center">
+  <img src="{base}/images/cannonball/cannonball-cad.png" alt="CAD"/>
+</div>
+
+In the end it turned out really nicely. All you need to do to get it to work is plug it in. The server and the game launch by themselves!
+
+These electronics will never leave this box again.
+I can bring it with me to any occasion where people might want to organize a street game.
+(This can be your event, [contact me](mailto:info@123ishatest.com)!)
+
+<div class="flex flex-row justify-center">
+  <img src="{base}/images/cannonball/cannonball-box.png" alt="CAD"/>
+</div>
+
+## The event
+I have to admit I was quite nervous the evening of the event.
+Normally I make a game, throw it on the internet for the world to see, and don't add analytics so I have no way of knowing whether it is a success.
+But now I had to stand there next to it, presenting my work to the world in a public manner.
+It could fail, nobody could play it and they could think I am <EasterEgg egg="Instead of one of the many other reasons">an idiot for making something bad</EasterEgg>.
+
+I had invited some friends to help me setup and provide a steady base of players.
+This was great as I could ask them to recruit strangers to join in, and play as well or as poorly as the situation demanded.
+
+<div class="flex flex-row justify-center">
+  <img src="{base}/images/cannonball/cannonball.jpg" alt="Some friends playing the game"/>
+</div>
+
+I had set up my projector around 21:30 in the city center while it was still light outside.
+This gave us plenty of time to prepare everything.
+Quite quickly, nearby people noticed that we were doing something interesting, and asked what it was about.
+
+At first, most people were sceptical, thinking I was trying to sell them something.
+When I told them I just made something for fun, their attitudes changed completely.
+
+So my new opener became "Do you want to play this fun game that I made?" which got great responses such as "Cool!", "How?", or "Why?"
+
+It was amazing to watch people interact and enjoy something I've worked so hard on.
+Some people stayed for up to 20 minutes playing and having fun.
+It was very rewarding!
+
+Overall, the game was played by about 200 players, scoring around <EasterEgg egg="of which 100 own goals">800 goals</EasterEgg>
+
+<div class="flex flex-row justify-center">
+  <img src="{base}/images/cannonball/cannonball-dark.png" alt="Late at night"/>
+</div>
+
+## Reflection
+Overall I am incredibly content with how this project turned out.
+This is the first time I've done something of this scale this publicly, and I was blown away by the amount of positive feedback I've gotten.
+
+I will definitely host more events in the future, and I hope to see you there!
+
+Thank you for reading,
+
+Isha
