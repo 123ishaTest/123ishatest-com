@@ -1,6 +1,16 @@
 import type { BlogPost } from '$lib/model/BlogPost';
 import { asset } from '$app/paths';
 
+export const dordthuis: BlogPost = {
+  id: 'dordthuis',
+  title: 'Dordthuis',
+  description: 'Developing 20 interactive book-recommending iOS applications for a new hybrid library!',
+  date: '01/10/2026',
+  image: asset('/images/dordthuis/Boekhoek.jpg'),
+  tags: ['client'],
+  path: '/(app)/blog/(posts)/dordthuis',
+};
+
 export const cannonball: BlogPost = {
   id: 'cannonball',
   title: 'Cannonball - multiplayer street game',
@@ -66,4 +76,4 @@ export const foolsball: BlogPost = {
   path: '/(app)/blog/(posts)/foolsball',
 };
 
-export const blogPosts: BlogPost[] = [cannonball, flaggalicious, dataDrivenSystems, beatBox];
+export const blogPosts: BlogPost[] = [dordthuis, cannonball, flaggalicious, dataDrivenSystems, beatBox];

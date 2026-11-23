@@ -2,7 +2,7 @@
   import { resolve } from '$app/paths';
 </script>
 
-<div class="pointer-events-auto flex flex-col">
+<div class="pointer-events-auto flex flex-col print:hidden">
   <a href={resolve('/')}>123IshaTest</a>
   <br />
   <a href={resolve('/about')}>About</a>
