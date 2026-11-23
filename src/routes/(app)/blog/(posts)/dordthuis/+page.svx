@@ -1,0 +1,141 @@
+<script lang="ts">
+  import { resolve } from '$app/paths';
+  import EasterEgg from '$lib/components/EasterEgg.svelte';
+  import ExternalLink from '$lib/components/ExternalLink.svelte';
+  import Alert from '$lib/components/Alert.svelte';
+  import Image from '$lib/components/Image.svelte';
+</script>
+
+For the last three months I have been working on a project for <ExternalLink href="https://www.nbdbiblion.nl/">NBD Biblion</ExternalLink>, a non-profit who provides digital and physical services for nearly all Dutch libraries.
+This blog describes the project from start to end, explains the high level setup of the solution, and contains some _thrilling_ images!
+
+## The client
+If you've ever been to a Dutch library as a child, you might have noticed that the books have a <EasterEgg egg="Bite-resistant against children up to age 3, probably">thicker cover</EasterEgg> than normal.
+Turns out it's NBD Biblion who produces those books, they even maintain their own machines for it!
+
+Not only that, but they also provide digital services such as automated book classifications and recommendations for the hundreds of new books that get released every week.
+And, in this case, providing interactive recommender apps to libraries who need them!
+
+It's an interesting organization, and they had an interesting project.
+
+<Image src={resolve('/images/dordthuis/dordthuis.png')} alt="Dordthuis" caption="An artist rendering of Dordthuis."/>
+
+## The project
+
+Mid November there will open a new hybrid building in the city of Dordrecht.
+It will serve in part as a community center; a place for the locals to study, relax, and hang out.
+It also features a tightly integrated library, to provide books to curious passers-by.
+
+In order to help every visitor to the book they enjoy the most, they wanted to build recommender kiosks.
+iPads will be placed all around the building, tempting unsuspecting book-lovers to answer a few questions about their interests, and providing them with the book that suits them best.
+
+The building is divided by topic. There are rooms in the theme of History, Science, Food, Religion and many, many more.
+This means they didn't want a couple of recommender apps, they wanted 20.
+
+<Image src={resolve('/images/dordthuis/SportEnSpel.png')} alt="Sport en Spel" caption="Inviting with flipping tiles for sports and games."/>
+
+## Applications as content
+
+Now every time I hear <EasterEgg egg="Such as four, or one hundred">a number bigger than three</EasterEgg>, my software engineering instinct kicks in and it's time to start abstracting.
+What do these apps all have in common?
+
+- Is the book data provided in a similar manner?
+- Do they share visual components?
+- Isn't a recommender system really just one big form with results?
+
+Now it won't surprise you that the answer to all of these questions is a resounding yes.
+Partly because I made sure to write them that way, but also because as long as you abstract enough, every problem is the exact same.
+
+With only 3 months to complete the project, we would need to complete <EasterEgg egg="You now have enough information to calculate how many hours I worked on the project in total. Good luck!">one application every 3 days</EasterEgg>.
+A rapid pace, but not impossible given proper reuse and abstractions.
+
+While applications are not fully static, they are static enough that you can view them as _content_.
+If we can define a full application as content, we can create _behaviour_ that implements it!
+
+<Image src={resolve('/images/dordthuis/Thriller.png')} alt="Thriller" caption="Thriller: Dark and mysterious."/>
+
+## AppEngine
+
+The `AppEngine` is the heart of the project.
+It defines a format called the `AppConfig` which is a full description of an application.
+It looks something like this:
+
+```yaml
+appId: food
+
+stages:
+  - id: attract
+    screen: FoodAttractScreen
+    data:
+      title: Find a tasty book
+    transition:
+      type: next
+      stage: question
+
+  - id: preference
+    screen: FoodQuestionScreen
+    data:
+      background: green
+    question:
+      title: What are you looking for?
+      type: multiple-choice
+      maxAnswers: 1
+      answers:
+        - snacks:
+            label: Snacks
+            icon: chips
+            transition: result
+        - dinner:
+            label: Dinner
+            icon: plate
+            transition: result
+
+  - id: result
+    screen: FoodResultScreen
+    isResult: true
+    data:
+      title: Select a book
+    transition: end
+```
+The engine parses this configuration file, follows the transitions and renders the correct screens with the related questions and data.
+It records all user responses and when instructed, calculates the recommended books based on the provided responses.
+
+An additional bonus of standardising every application in this manner is that ancillary services become trivial to implement.
+Logging or analytics can be added within the engine and are therefore automatically supported across all applications.
+
+It is a relatively <EasterEgg egg="And oversimplified here">simple</EasterEgg> but incredibly powerful system that works great!
+
+<Image src={resolve('/images/dordthuis/Jeugd.png')} alt="Youth" caption="Playful and interactive application for the younger readers."/>
+
+## The screens
+
+Having a great software architecture is something I care about deeply, but the end user might not so much.
+They want an application that is fun to interact with, and recommends them a good book.
+The recommendation aspect is already handled by NBD Biblion, but we still got to make sure our applications look and feel great.
+
+For this project we worked together with graphic designers, who created the layouts for every screen in each application.
+Based on these designs, we implemented a shared component library with a small theming system.
+Each application has a home button for example, whose icon can be configured through the theme.
+
+<Alert type="info">
+  As we were using SwiftUI, we decided to keep the configurability of the component library deliberately low.
+  SwiftUI already offers great composition through its API, and there is little gain in "reinventing" that through reusable components.
+</Alert>
+
+With this component library we could finally implement the various screens, which you can admire in the screenshots sprinkled across this article.
+
+<Image src={resolve('/images/dordthuis/LandenEnVolken.png')} alt="Youth" caption="Travel, for those who are getting tired of their own house."/>
+
+## The result
+After 3 months of hard work, we delivered 20 iOS applications that allow users to find their future favourite books.
+It was very fun to work with the people of NBD Biblion, and I think we accomplished a great result in such a short time.
+Not only the working recommendation apps, but a solid foundation to deliver even more complex and interesting experiences with in the future!
+
+If you'd like to see the app in action, feel free to swing by Dordthuis!
+It opens <ExternalLink href="https://dordthuis.nl/nl/nieuws/dordthuis-opent-deuren-november">November 23, 2026</ExternalLink>.
+
+<Image src={resolve('/images/dordthuis/Boekhoek.jpg')} alt="Boekhoek" caption="The application embedded in the library"/>
+
+<span class="italic text-xs">
+Does your company need a lot of work done quickly? Feel free to contact me at <a href="mailto:info@123ishatest.com">info@123ishatest.com</a>!
+</span>
